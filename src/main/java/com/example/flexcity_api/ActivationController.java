@@ -69,7 +69,7 @@ class ActivationController {
         return false;
     }
 
-    private static List<Asset> filterAvailableAssets(String activationDate, List<Asset> assets) {
+    protected static List<Asset> filterAvailableAssets(String activationDate, List<Asset> assets) {
         final LocalDate date = LocalDate.parse(activationDate);
         final String finalActivationDate = date.getDayOfWeek().toString();
         System.out.println("Day : " + finalActivationDate);
