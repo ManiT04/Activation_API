@@ -1,11 +1,11 @@
 package com.example.flexcity_api;
 
-class ActivatedAsset {
+class DesactivatedAsset {
     private String code;
     private int activatedVolume;
     private double activationCost;
 
-    public ActivatedAsset(String code, int activatedVolume, double activationCost) {
+    public DesactivatedAsset(String code, int activatedVolume, double activationCost) {
         this.code = code;
         this.activatedVolume = activatedVolume;
         this.activationCost = activationCost;
