@@ -38,7 +38,7 @@ class ActivationController {
         }
 
         // Calculate the total activated volume and check if it's enough
-        List<DesactivatedAsset> desactivatedAssets = new ArrayList<>();
+        List<DesactivatedAsset> deactivateAssets = new ArrayList<>();
         int volumeToActivate = requestedVolume;
         int totalActivatedVolume = 0;
 
@@ -46,11 +46,11 @@ class ActivationController {
             if (volumeToActivate > 0) {
                 volumeToActivate -= asset.getVolume();
                 totalActivatedVolume += asset.getVolume();
-                desactivatedAssets.add(new DesactivatedAsset(asset.getCode(), totalActivatedVolume, asset.getActivationCost()));
+                deactivateAssets.add(new DesactivatedAsset(asset.getCode(), totalActivatedVolume, asset.getActivationCost()));
             }
 
             if (totalActivatedVolume >= requestedVolume) {
-                return ResponseEntity.ok(desactivatedAssets);
+                return ResponseEntity.ok(deactivateAssets);
             }
         }
 
